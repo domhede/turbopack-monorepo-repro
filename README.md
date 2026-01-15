@@ -26,21 +26,25 @@ turbopack-monorepo-repro/
 ## Steps to reproduce
 
 1. Install dependencies:
+
    ```bash
    yarn install
    ```
 
 2. Authenticate with Vercel CLI (required):
+
    ```bash
    npx vercel login
    ```
 
 3. Navigate to the frontend app:
+
    ```bash
    cd apps/frontend
    ```
 
 4. Link the project (select defaults when prompted):
+
    ```bash
    npx vercel link
    ```
@@ -75,14 +79,14 @@ The path `apps/frontend/` is doubled because `outputFileTracingRoot` causes the 
 The `next.config.js` contains:
 
 ```js
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   turbopack: {
-    root: path.resolve(__dirname, '../..'),
+    root: path.resolve(__dirname, "../.."),
   },
-  outputFileTracingRoot: path.resolve(__dirname, '../..'),
-  output: 'standalone',
+  outputFileTracingRoot: path.resolve(__dirname, "../.."),
+  output: "standalone",
 };
 ```
 
@@ -96,6 +100,7 @@ module.exports = {
 ## Workaround
 
 Currently, there is no known workaround that allows both:
+
 1. Proper module resolution for monorepo packages
 2. Successful Vercel builds with Turbopack
 
