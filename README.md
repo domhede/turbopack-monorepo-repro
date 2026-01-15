@@ -45,9 +45,9 @@ turbopack-monorepo-repro/
    npx vercel link
    ```
 
-5. Run the Vercel build:
+5. Run the Vercel build (unset any existing Vercel env vars first):
    ```bash
-   npx vercel build
+   unset VERCEL_PROJECT_ID VERCEL_ORG_ID VERCEL_TOKEN && npx vercel build
    ```
 
 ## Expected
